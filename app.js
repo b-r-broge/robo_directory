@@ -12,15 +12,9 @@ app.use(express.static(__dirname));
 app.get('/public/', function(req, res) {
   // return full homepage
   console.log('access homepage');
-  res.render('index.mustache', robots.users);
+  res.render('index.mustache', robots);
 
 });
-
-// console.log(robots.users.indexOf(robots.users.username == 'dodda1'));
-// console.log(robots.users.find(function(x) {
-//   console.log(x.username);
-//   return x.username === 'dodda1';
-// }));
 
 app.get('/public/:username', function(req, res) {
   // return user profile
@@ -33,5 +27,4 @@ app.get('/public/:username', function(req, res) {
 
 app.listen(3000, function() {
   console.log("Express server started");
-  // console.log(robots.users);
 });
